@@ -5,5 +5,34 @@
 // Variables
 @import "variables";
 
+
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "carousel";
+@import "sections";
+
+html,body{
+  height:100%;
+  width:100%;
+}
+
+body{
+  overflow-x: hidden;
+  background: url(../../../public/images/bg-cover.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  color:#fff;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav .logo {
+    display:none;
+  }
+}
+
+.navbar-nav .logo {
+  opacity: 1;
+  vertical-align: middle;
+}
