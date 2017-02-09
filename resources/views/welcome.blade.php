@@ -26,10 +26,10 @@
             <a class="navbar-brand" href="#">Coffee LTD</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav pull-right">
+            <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#order">Order</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -119,7 +119,7 @@
                                     <div class="slide-2"></div>
                                     <div class="hero">
                                         <hgroup>
-                                            <h1 class="carousel-title">Check It Out</h1>
+                                            <h1 class="carousel-title">Check It Out Today!</h1>
                                         </hgroup>
                                     </div>
                                 </div>
