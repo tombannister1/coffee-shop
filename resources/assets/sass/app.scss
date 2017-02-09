@@ -1,6 +1,6 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
 
 // Variables
 @import "variables";
@@ -26,13 +26,25 @@ body{
   color:#fff;
 }
 
-@media (max-width: 768px) {
-  .navbar-nav .logo {
-    display:none;
-  }
+h1, h2{
+  font-weight: 700;
+}
+h1{
+  font-size: 3em;
 }
 
-.navbar-nav .logo {
-  opacity: 1;
-  vertical-align: middle;
+h1.carousel-title{
+  background-color: #9b8a30;
+  padding: 10px 30px;
+  max-width: 400px;
+}
+
+
+a.link{
+  color: #9b8a30;
+
+  &:hover{
+    color: #9b8a30;
+    text-decoration: underline;
+  }
 }

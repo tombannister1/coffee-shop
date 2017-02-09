@@ -45,44 +45,111 @@
 
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
-                            <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#bs-carousel" data-slide-to="1"></li>
-                            <li data-target="#bs-carousel" data-slide-to="2"></li>
+                            <?php
+                                //get current time
+
+                                $time = date('H:i:s');
+
+                                $start_time = '08:00:00';
+                                $end_time = '11:00:00';
+                            ?>
+                            @if($time > $start_time && $time < $end_time)
+                                <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#bs-carousel" data-slide-to="1"></li>
+                                <li data-target="#bs-carousel" data-slide-to="2"></li>
+                                <li data-target="#bs-carousel" data-slide-to="3"></li>
+                            @else
+                                <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#bs-carousel" data-slide-to="1"></li>
+                                <li data-target="#bs-carousel" data-slide-to="2"></li>
+                            @endif
                         </ol>
 
                         <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-                            <div class="item slides active">
-                                <div class="slide-1"></div>
-                                <div class="hero">
-                                    <hgroup>
-                                        <h1>We are creative</h1>
-                                        <h3>Get start your next awesome project</h3>
-                                    </hgroup>
-                                    <button class="btn btn-hero btn-lg" role="button">See all features</button>
+                        @if($time > $start_time && $time < $end_time)
+                            <div class="carousel-inner" ng-init="init()" ng-controller="HomepageController">
+                                <div class="item slides active" style="background: url('../images/main-banner.jpg'); border-radius:5px; ">
+                                    <div class="slide"></div>
+                                    <div class="hero">
+                                        <hgroup>
+                                            <h1 class="carousel-title">Special Of The Day - @{{ product_of_the_day.product.product_name }}</h1>
+                                        </hgroup>
+                                        <button href="mailto:buy@coffeshop.co.uk" class="btn btn-primary ribbon">Order Now</button>
+                                    </div>
+                                </div>
+                                <div class="item slides" style="background: url('http://www.placehold.it/1000x550');">
+                                    <div class="slide-1"></div>
+                                    <div class="hero">
+                                        <hgroup>
+                                            <h1 class="carousel-title">We are creative</h1>
+                                        </hgroup>
+                                        <button class="btn btn-hero btn-lg" role="button">See all features</button>
+                                    </div>
+                                </div>
+                                <div class="item slides" style="background: url('http://www.placehold.it/1000x550');">
+                                    <div class="slide-2"></div>
+                                    <div class="hero">
+                                        <hgroup>
+                                            <h1 class="carousel-title">We are smart</h1>
+                                        </hgroup>
+                                        <button class="btn btn-hero btn-lg" role="button">See all features</button>
+                                    </div>
+                                </div>
+                                <div class="item slides" style="background: url('http://www.placehold.it/1000x550');">
+                                    <div class="slide-3"></div>
+                                    <div class="hero">
+                                        <hgroup>
+                                            <h1 class="carousel-title">We are amazing</h1>
+                                        </hgroup>
+                                        <button class="btn btn-hero btn-lg" role="button">See all features</button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="item slides">
-                                <div class="slide-2"></div>
-                                <div class="hero">
-                                    <hgroup>
-                                        <h1>We are smart</h1>
-                                        <h3>Get start your next awesome project</h3>
-                                    </hgroup>
-                                    <button class="btn btn-hero btn-lg" role="button">See all features</button>
+                        @else
+                            <div class="carousel-inner">
+                                <div class="item slides active" style="background: url('http://www.placehold.it/1000x550');">
+                                    <div class="slide-1"></div>
+                                    <div class="hero">
+                                        <hgroup>
+                                            <h1 class="carousel-title">Come In Store Today!</h1>
+                                        </hgroup>
+                                    </div>
+                                </div>
+                                <div class="item slides" style="background: url('http://www.placehold.it/1000x550');">
+                                    <div class="slide-2"></div>
+                                    <div class="hero">
+                                        <hgroup>
+                                            <h1 class="carousel-title">Check It Out</h1>
+                                        </hgroup>
+                                    </div>
+                                </div>
+                                <div class="item slides" style="background: url('http://www.placehold.it/1000x550');">
+                                    <div class="slide-3"></div>
+                                    <div class="hero">
+                                        <hgroup>
+                                            <h1 class="carousel-title">Barista!</h1>
+                                        </hgroup>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="item slides">
-                                <div class="slide-3"></div>
-                                <div class="hero">
-                                    <hgroup>
-                                        <h1>We are amazing</h1>
-                                        <h3>Get start your next awesome project</h3>
-                                    </hgroup>
-                                    <button class="btn btn-hero btn-lg" role="button">See all features</button>
-                                </div>
-                            </div>
-                        </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1 class="text-center">About Us</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <img class="img-responsive" src="http://winazcoffeeshop.com/wp-content/uploads/2016/04/backgroundcoffee.jpg" alt="Coffee shop">
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel faucibus nulla. Etiam non nibh vel est consequat congue vel eget felis. Maecenas vel orci nec elit pretium tempus nec vitae felis. Praesent quis justo eu tortor feugiat facilisis. Nam magna magna, gravida vitae tempor id, volutpat a ex. Nunc efficitur mauris elit, vel maximus orci dictum in. Suspendisse lacinia viverra magna, et vestibulum nisl. Maecenas feugiat, dolor a tincidunt egestas, urna augue interdum risus, in finibus neque turpis sed sapien. Mauris ipsum nisl, efficitur nec dapibus quis, tristique ac eros. In condimentum ipsum felis, ut ullamcorper purus semper non. Fusce faucibus turpis in ligula imperdiet fringilla. Aenean sit amet lorem turpis.</p>
                     </div>
                 </div>
             </div>
@@ -95,17 +162,19 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12">
-                        <div id="products-container">
-                            <div class="product-item" ng-repeat="product in products.products">
-                                <div class="col-md-4">
-                                    <h2>@{{ product.product_name }}</h2>
-                                </div>
-                                <div class="col-md-4">
-                                    <h2>@{{ product.product_name }}</h2>
-                                </div>
-                                <div class="col-md-4">
-                                    <h2>&pound; @{{ product.price }}</h2>
+                    <div id="products-wrapper">
+                        <div class="col-xs-12 col-md-2 product" ng-repeat="product in products.products">
+                            <div id="products-container">
+                                <div class="product-item text-center">
+                                    <div class="col-xs-12 ">
+                                        <h2>@{{ product.product_name }}</h2>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <h2>&pound; @{{ product.price }}</h2>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <button href="mailto:buy@coffeshop.co.uk" class="btn btn-primary ribbon">Order Now</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -122,7 +191,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
-                        <h2>To Place an order please email <a href="buy@coffeeshop.uk">buy@coffeeshop.uk</a></h2>
+                        <h2 class="text-center">To Place an order please email <a class="link" href="buy@coffeeshop.uk">buy@coffeeshop.uk</a></h2>
                     </div>
                 </div>
             </div>

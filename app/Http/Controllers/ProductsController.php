@@ -15,4 +15,13 @@ class ProductsController extends Controller
            'products' => $products
         ]);
     }
+
+    public function getProduct(Request $request)
+    {
+        $products = Product::where('live','=',1)->orderBy('quantity','DESC')->first();
+
+        return response()->json([
+            'product' => $products
+        ]);
+    }
 }

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Pacifico);@charset "UTF-8";
 
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -8317,12 +8317,40 @@ button.close {
   }
 }
 
-#bs-carousel {
-  background-color: #0d3625;
-}
-
 #hero {
   margin-top: 5%;
+}
+
+#products-wrapper {
+  text-align: center;
+}
+
+#about p {
+  font-size: 1.116em;
+  padding: 0px 30px;
+  font-weight: 700;
+}
+
+.product {
+  padding: 0px 0px 34px 0px;
+  background-color: #f0ad4e;
+  margin: 10px;
+}
+
+.btn-primary {
+  border: none;
+  background: #b36900;
+  border-radius: 0;
+  padding: 7px 17px;
+}
+
+.btn-primary:hover {
+  border-color: #ec9e2e;
+  background-color: #ec9e2e;
+}
+
+.hero {
+  padding: 50px 31px;
 }
 
 html,
@@ -8341,13 +8369,26 @@ body {
   color: #fff;
 }
 
-@media (max-width: 768px) {
-  .navbar-nav .logo {
-    display: none;
-  }
+h1,
+h2 {
+  font-weight: 700;
 }
 
-.navbar-nav .logo {
-  opacity: 1;
-  vertical-align: middle;
+h1 {
+  font-size: 3em;
+}
+
+h1.carousel-title {
+  background-color: #9b8a30;
+  padding: 10px 30px;
+  max-width: 400px;
+}
+
+a.link {
+  color: #9b8a30;
+}
+
+a.link:hover {
+  color: #9b8a30;
+  text-decoration: underline;
 }
