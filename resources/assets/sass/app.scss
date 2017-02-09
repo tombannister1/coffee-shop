@@ -1,9 +1,50 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
 
 // Variables
 @import "variables";
 
+
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "carousel";
+@import "sections";
+
+html,body{
+  height:100%;
+  width:100%;
+}
+
+body{
+  overflow-x: hidden;
+  background: url(../../../public/images/bg-cover.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  color:#fff;
+}
+
+h1, h2{
+  font-weight: 700;
+}
+h1{
+  font-size: 3em;
+}
+
+h1.carousel-title{
+  background-color: #9b8a30;
+  padding: 10px 30px;
+  max-width: 400px;
+}
+
+
+a.link{
+  color: #9b8a30;
+
+  &:hover{
+    color: #9b8a30;
+    text-decoration: underline;
+  }
+}
